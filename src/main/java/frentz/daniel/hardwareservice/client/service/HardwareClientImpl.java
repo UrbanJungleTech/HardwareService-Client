@@ -24,19 +24,19 @@ public class HardwareClientImpl implements HardwareClient{
 
     @Override
     public HardwareController getHardwareController(long hardwareControllerId) {
-        HardwareController result = this.restTemplate.getForEntity(uri + "/hardwarecontroller/" + String.valueOf(hardwareControllerId) + "/", HardwareController.class).getBody();
+        HardwareController result = this.restTemplate.getForEntity(uri + "/hardwarecontroller/" + String.valueOf(hardwareControllerId), HardwareController.class).getBody();
         return result;
     }
 
     @Override
     public HardwareController addHardware(long hardwareControllerId, Hardware hardware){
-        HardwareController result = this.restTemplate.postForEntity(uri + "/hardwarecontroller/" + hardwareControllerId + "/hardware/", hardware, HardwareController.class).getBody();
+        HardwareController result = this.restTemplate.postForEntity(uri + "/hardwarecontroller/" + hardwareControllerId + "/hardware", hardware, HardwareController.class).getBody();
         return result;
     }
 
     @Override
     public HardwareController addSensor(long hardwareControllerId, Sensor sensor){
-        HardwareController result = this.restTemplate.postForEntity(uri + "/hardwarecontroller/" + hardwareControllerId + "/sensor/", sensor, HardwareController.class).getBody();
+        HardwareController result = this.restTemplate.postForEntity(uri + "/hardwarecontroller/" + hardwareControllerId + "/sensor", sensor, HardwareController.class).getBody();
         return result;
     }
 
@@ -55,13 +55,13 @@ public class HardwareClientImpl implements HardwareClient{
 
     @Override
     public double readSensor(long sensorId){
-        double result = this.restTemplate.getForObject(uri + "/sensor/" + String.valueOf(sensorId), Double.class);
+        double result = this.restTemplate.getForObject(uri + "/sensor" + String.valueOf(sensorId), Double.class);
         return result;
     }
 
     @Override
     public List<HardwareController> getHardwareControllers() {
-        List<HardwareController> result = this.restTemplate.getForObject(uri + "/hardwarecontroller/", HardwareControllerList.class);
+        List<HardwareController> result = this.restTemplate.getForObject(uri + "/hardwarecontroller", HardwareControllerList.class);
         return result;
     }
 
