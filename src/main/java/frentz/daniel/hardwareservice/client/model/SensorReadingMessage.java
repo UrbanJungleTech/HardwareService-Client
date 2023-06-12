@@ -1,8 +1,8 @@
-package frentz.daniel.controllerclient.model;
+package frentz.daniel.hardwareservice.client.model;
 
 public class SensorReadingMessage {
     private String sensorSerialNumber;
-    private SensorType[] sensorTypes;
+    private String[] sensorTypes;
 
     public String getSensorSerialNumber() {
         return sensorSerialNumber;
@@ -12,11 +12,11 @@ public class SensorReadingMessage {
         this.sensorSerialNumber = sensorSerialNumber;
     }
 
-    public SensorType[] getSensorTypes() {
+    public String[] getSensorTypes() {
         return sensorTypes;
     }
 
-    public void setSensorTypes(SensorType[] sensorTypes) {
+    public void setSensorTypes(String[] sensorTypes) {
         this.sensorTypes = sensorTypes;
     }
 }

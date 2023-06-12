@@ -1,19 +1,23 @@
-package frentz.daniel.controllerclient.model;
+package frentz.daniel.hardwareservice.client.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Hardware {
     private Long id;
     private Long port;
     private String name;
-    private HardwareCategory hardwareCategory;
+    private String type;
     private HardwareState desiredState;
     private HardwareState currentState;
-    private Long hardwareId;
+    private Long hardwareControllerId;
     private List<Timer> timers;
+    private Map<String, String> metadata;
 
     public Hardware(){
+        this.metadata = new HashMap<>();
         this.timers = new ArrayList<>();
     }
     public String getName() {
@@ -25,13 +29,6 @@ public class Hardware {
     }
 
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Long getPort() {
         return port;
@@ -41,20 +38,12 @@ public class Hardware {
         this.port = port;
     }
 
-    public Long getHardwareId() {
-        return hardwareId;
+    public Long getHardwareControllerId() {
+        return hardwareControllerId;
     }
 
-    public void setHardwareId(Long hardwareId) {
-        this.hardwareId = hardwareId;
-    }
-
-    public HardwareCategory getHardwareCategory() {
-        return hardwareCategory;
-    }
-
-    public void setHardwareCategory(HardwareCategory hardwareCategory) {
-        this.hardwareCategory = hardwareCategory;
+    public void setHardwareControllerId(Long hardwareControllerId) {
+        this.hardwareControllerId = hardwareControllerId;
     }
 
     public HardwareState getDesiredState() {
@@ -79,5 +68,29 @@ public class Hardware {
 
     public void setTimers(List<Timer> timers) {
         this.timers = timers;
+    }
+
+    public Map<String, String> getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(Map<String, String> metadata) {
+        this.metadata = metadata;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

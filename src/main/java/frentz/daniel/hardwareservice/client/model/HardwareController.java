@@ -1,4 +1,4 @@
-package frentz.daniel.controllerclient.model;
+package frentz.daniel.hardwareservice.client.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +11,7 @@ public class HardwareController {
     private String serialNumber;
 
     public HardwareController(){
+        this.sensors = new ArrayList<>();
         this.hardware = new ArrayList<>();
     }
 

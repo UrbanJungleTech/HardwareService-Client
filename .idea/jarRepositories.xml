@@ -7,6 +7,11 @@
       <option name="url" value="https://repo.maven.apache.org/maven2" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="plants repository" />
+      <option name="name" value="plants repository" />
+      <option name="url" value="http://192.168.1.7:7000/repository/cron-client/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Maven Central repository" />
       <option name="url" value="https://repo1.maven.org/maven2" />
@@ -15,6 +20,11 @@
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="plants" />
+      <option name="name" value="plants" />
+      <option name="url" value="https://pkgs.dev.azure.com/frentzsoftware/plants/_packaging/plants/maven/v1" />
     </remote-repository>
   </component>
 </project>

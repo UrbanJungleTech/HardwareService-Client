@@ -1,4 +1,4 @@
-package frentz.daniel.controllerclient.model;
+package frentz.daniel.hardwareservice.client.model;
 
 public class HardwareStateMessage {
     private long port;

@@ -1,4 +1,4 @@
-package frentz.daniel.controllerclient.model;
+package frentz.daniel.hardwareservice.client.model;
 
 import java.util.List;
 
