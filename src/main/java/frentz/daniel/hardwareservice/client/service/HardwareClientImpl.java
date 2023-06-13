@@ -29,14 +29,14 @@ public class HardwareClientImpl implements HardwareClient{
     }
 
     @Override
-    public HardwareController addHardware(long hardwareControllerId, Hardware hardware){
-        HardwareController result = this.restTemplate.postForEntity(uri + "/hardwarecontroller/" + hardwareControllerId + "/hardware", hardware, HardwareController.class).getBody();
+    public Hardware addHardware(long hardwareControllerId, Hardware hardware){
+        Hardware result = this.restTemplate.postForEntity(uri + "/hardwarecontroller/" + hardwareControllerId + "/hardware", hardware, Hardware.class).getBody();
         return result;
     }
 
     @Override
-    public HardwareController addSensor(long hardwareControllerId, Sensor sensor){
-        HardwareController result = this.restTemplate.postForEntity(uri + "/hardwarecontroller/" + hardwareControllerId + "/sensor", sensor, HardwareController.class).getBody();
+    public Sensor addSensor(long hardwareControllerId, Sensor sensor){
+        Sensor result = this.restTemplate.postForEntity(uri + "/hardwarecontroller/" + hardwareControllerId + "/sensor", sensor, Sensor.class).getBody();
         return result;
     }
 
@@ -54,8 +54,8 @@ public class HardwareClientImpl implements HardwareClient{
     }
 
     @Override
-    public double readSensor(long sensorId){
-        double result = this.restTemplate.getForObject(uri + "/sensor" + String.valueOf(sensorId), Double.class);
+    public SensorReading readSensor(long sensorId){
+        SensorReading result = this.restTemplate.getForObject(uri + "/sensor" + String.valueOf(sensorId), SensorReading.class);
         return result;
     }
 
@@ -66,8 +66,8 @@ public class HardwareClientImpl implements HardwareClient{
     }
 
     @Override
-    public double readAverageSensor(long hardwareControllerId, String sensorType){
-        double result = this.restTemplate.getForObject(uri + "/hardwarecontroller/" + hardwareControllerId + "/averageSensorReading/" + sensorType, Double.class);
+    public SensorReading readAverageSensor(long hardwareControllerId, String sensorType){
+        SensorReading result = this.restTemplate.getForObject(uri + "/hardwarecontroller/" + hardwareControllerId + "/averageSensorReading/" + sensorType, SensorReading.class);
         return result;
     }
 

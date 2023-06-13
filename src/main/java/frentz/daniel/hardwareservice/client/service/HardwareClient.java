@@ -7,11 +7,11 @@ import java.util.List;
 public interface HardwareClient {
     HardwareController createHardwareController(HardwareController hardwareController);
     HardwareController getHardwareController(long hardwareControllerId);
-    HardwareController addHardware(long hardwareControllerId, Hardware hardware);
+    Hardware addHardware(long hardwareControllerId, Hardware hardware);
     Timer addTimer(long hardwareId, Timer timer);
     Hardware setHardwareState(long hardwareId, HardwareState hardwareState);
-    double readSensor(long sensorId);
+    SensorReading readSensor(long sensorId);
     List<HardwareController> getHardwareControllers();
-    double readAverageSensor(long hardwareControllerId, String sensorType);
-    HardwareController addSensor(long hardwareControllerId, Sensor sensor);
+    SensorReading readAverageSensor(long hardwareControllerId, String sensorType);
+    Sensor addSensor(long hardwareControllerId, Sensor sensor);
 }
