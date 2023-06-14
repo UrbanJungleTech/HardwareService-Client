@@ -47,15 +47,15 @@ public class HardwareClientImpl implements HardwareClient{
     }
 
     @Override
-    public Hardware setHardwareState(long hardwareId, HardwareState hardwareState){
-        Hardware result = this.restTemplate.postForEntity(uri + "/hardware/" + hardwareId + "/state", hardwareState, Hardware.class).getBody();
+    public HardwareState setHardwareState(long hardwareId, HardwareState hardwareState){
+        HardwareState result = this.restTemplate.postForEntity(uri + "/hardware/" + hardwareId + "/state", hardwareState, HardwareState.class).getBody();
         return result;
 
     }
 
     @Override
     public SensorReading readSensor(long sensorId){
-        SensorReading result = this.restTemplate.getForObject(uri + "/sensor" + String.valueOf(sensorId), SensorReading.class);
+        SensorReading result = this.restTemplate.getForObject(uri + "/sensor/" + String.valueOf(sensorId) + "/reading", SensorReading.class);
         return result;
     }
 
